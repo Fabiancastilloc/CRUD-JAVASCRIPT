@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Usuarios</title>
+  <link rel="stylesheet" href="/css/listarU.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/contratos/listar" class="menu-item"><i class="fas fa-file-alt"></i> Listar contratos</a>
+      <a href="/contratos/agregar" class="menu-item"><i class="fas fa-plus"></i> Agregar contrato</a>
+      <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Listado de Usuarios -->
+  <div class="user-list">
+    <h1 class="user-list-title">Listado de Usuarios</h1>
+    <% if (usuarios.length === 0) { %>
+      <p class="no-users">No se encontraron usuarios.</p>
+    <% } else { %>
+      <table>
+        <tr>
+          <th>CC</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Género</th>
+          <th>Email</th>
+          <th>Contraseña</th>
+          <th>Acciones</th>
+        </tr>
+        <% usuarios.forEach((usuario) => { %>
+          <tr>
+            <td><%= usuario.cc %></td>
+            <td><%= usuario.nombre %></td>
+            <td><%= usuario.apellido %></td>
+            <td><%= usuario.genero %></td>
+            <td><%= usuario.email %></td>
+            <td><%= usuario.pass %></td>
+            <td>
+              <a href="/usuarios/editar/<%= usuario.cc %>"><i class="fas fa-edit"></i> Editar</a>
+              <a href="/usuarios/eliminar/<%= usuario.cc %>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </td>
+          </tr>
+        <% }); %>
+      </table>
+    <% } %>
+  </div>
+
+  <!-- Botones de Agregar e Ir a Inicio -->
+  <div class="button-container">
+    <a href="/usuarios/registrar" class="add-button">Agregar Usuario</a>
+    <a href="/" class="home-button">Ir a Inicio</a>
+  </div>
+
+</body>
+</html>

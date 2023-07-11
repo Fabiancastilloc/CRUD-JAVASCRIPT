@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Contrato</title>
+  <link rel="stylesheet" href="/css/editarContrato.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+      <a href="/usuarios/listar" class="menu-item"><i class="fas fa-users"></i> Listar usuarios</a>
+      <a href="/contratos/listar" class="menu-item"><i class="fas fa-file-alt"></i> Listar contratos</a>
+      <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Formulario de Edición -->
+  <div class="container">
+    <h1>Editar Contrato</h1>
+    <form action="/contratos/editar-contrato/<%= contrato.id %>" method="POST">
+      <label for="fechaFirma">Fecha de Firma:</label>
+      <input type="date" name="fechaFirma" id="fechaFirma" value="<%= contrato.fechaFirma %>" required><br><br>
+      <label for="fechaInicio">Fecha de Inicio:</label>
+      <input type="date" name="fechaInicio" id="fechaInicio" value="<%= contrato.fechaInicio %>" required><br><br>
+      <label for="fechaFin">Fecha de Fin:</label>
+      <input type="date" name="fechaFin" id="fechaFin" value="<%= contrato.fechaFin %>" required><br><br>
+      <label for="empresa">Empresa:</label>
+      <input type="text" name="empresa" id="empresa" value="<%= contrato.empresa %>" required><br><br>
+      <label for="empleado">Empleado:</label>
+      <input type="text" name="empleado" id="empleado" value="<%= contrato.empleado %>" required><br><br>
+      <label for="funciones">Funciones:</label>
+      <input type="text" name="funciones" id="funciones" value="<%= contrato.funciones %>" required><br><br>
+      <label for="monto">Monto:</label>
+      <input type="number" name="monto" id="monto" value="<%= contrato.monto %>" required><br><br>
+      <label for="frecuenciaDePago">Frecuencia de Pago:</label>
+      <input type="text" name="frecuenciaDePago" id="frecuenciaDePago" value="<%= contrato.frecuenciaDePago %>" required><br><br>
+      <label for="usuariocc">CC Usuario:</label>
+      <input type="number" name="usuariocc" id="usuariocc" value="<%= contrato.usuariocc %>" required><br><br>
+      <button type="submit"><i class="fas fa-edit"></i> Guardar</button>
+    </form>
+  </div>
+</body>
+</html>

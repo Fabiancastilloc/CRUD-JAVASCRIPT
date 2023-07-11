@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inicio</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <% if (usuario) { %>
+    <!-- Encabezado -->
+    <header>
+      <a href="/" class="logo">CRUD CONTRATOS</a>
+      <nav class="menu">
+        <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+        <a href="/usuarios/listar" class="menu-item"><i class="fas fa-users"></i> Listar usuarios</a>
+        <a href="/contratos/agregar" class="menu-item"><i class="fas fa-plus"></i> Agregar contrato</a>
+        <a href="/contratos/listar" class="menu-item"><i class="fas fa-list"></i> Listar contratos</a>
+        <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- Cuerpo -->
+    <section>
+      <div class="container">
+        <div class="image-slider">
+          <img src="/image/1.jpg" alt="Imagen 1" class="active animation">
+          <img src="/image/2.jpg" alt="Imagen 2" class="animation">
+          <img src="/image/3.jpg" alt="Imagen 3" class="animation">
+          <div class="text-overlay">
+            <h2>Bienvenido</h2>
+            <p>Ahora que has iniciado sesión, tienes acceso a funciones adicionales en nuestra plataforma de gestión de contratos. Aquí puedes encontrar opciones para administrar usuarios y contratos, así como realizar otras acciones específicas según tus permisos.</p>
+            <p>Explora las diferentes opciones en el menú y comienza a aprovechar al máximo nuestra plataforma.</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Pie de página - Usuario autenticado</p>
+    </footer>
+  <% } else { %>
+    <!-- Encabezado -->
+    <header>
+      <a href="/" class="logo">CRUD CONTRATOS</a>
+      <nav class="menu">
+        <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+        <a href="/usuarios/registrar" class="menu-item"><i class="fas fa-user-plus"></i> Registrar usuario</a>
+        <a href="/usuarios/login" class="menu-item"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
+      </nav>
+    </header>
+
+    <!-- Cuerpo -->
+    <section>
+      <div class="container">
+        <div class="image-slider">
+          <img src="/image/1.jpg" alt="Imagen 1" class="active animation">
+          <img src="/image/2.jpg" alt="Imagen 2" class="animation">
+          <img src="/image/3.jpg" alt="Imagen 3" class="animation">
+          <div class="text-overlay">
+            <h3>Agrega contratos a tu empresa</h3>
+            <p>Utiliza nuestra plataforma para agregar y gestionar contratos para tu empresa. Nuestro sistema te permite:</p>
+            <ul>
+                <li>Registrar nuevos contratos con toda la información necesaria.</li>
+                <li>Visualizar y buscar contratos existentes en la lista de contratos.</li>
+                <li>Realizar ediciones y actualizaciones en los contratos existentes.</li>
+                <li>Eliminar contratos que ya no sean necesarios.</li>
+            </ul>
+            <p>Con nuestra plataforma de gestión de contratos, podrás mantener un control efectivo y organizado de los contratos de tu empresa.</p>
+            <p>¡Regístrate ahora y comienza a agregar contratos!</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Pie de página - Usuario no autenticado</p>
+    </footer>
+  <% } %>
+  
+  <script src="/js/script.js"></script>
+</body>
+</html>

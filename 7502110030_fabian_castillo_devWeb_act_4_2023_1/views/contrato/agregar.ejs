@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agregar Contrato</title>
+  <link rel="stylesheet" href="/css/agregarContrato.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+      <a href="/contratos/listar" class="menu-item"><i class="fas fa-file-alt"></i> Listar contratos</a>
+      <a href="/usuarios/listar" class="menu-item"><i class="fas fa-users"></i> Listar usuarios</a>
+      <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Formulario de Agregar Contrato -->
+  <div class="add-form">
+    <h1 class="add-form-title">Agregar Contrato</h1>
+    <form action="/contratos/agregar-contrato" method="POST">
+      <label for="fechaFirma"><i class="fas fa-calendar-alt"></i> Fecha de Firma:</label>
+      <input type="date" name="fechaFirma" id="fechaFirma" required><br><br>
+      <label for="fechaInicio"><i class="fas fa-calendar-alt"></i> Fecha de Inicio:</label>
+      <input type="date" name="fechaInicio" id="fechaInicio" required><br><br>
+      <label for="fechaFin"><i class="fas fa-calendar-alt"></i> Fecha de Fin:</label>
+      <input type="date" name="fechaFin" id="fechaFin" required><br><br>
+      <label for="empresa"><i class="fas fa-building"></i> Empresa:</label>
+      <input type="text" name="empresa" id="empresa" required><br><br>
+      <label for="empleado"><i class="fas fa-user"></i> Empleado:</label>
+      <input type="text" name="empleado" id="empleado" required><br><br>
+      <label for="funciones"><i class="fas fa-tasks"></i> Funciones:</label>
+      <input type="text" name="funciones" id="funciones" required><br><br>
+      <label for="monto"><i class="fas fa-dollar-sign"></i> Monto:</label>
+      <input type="number" name="monto" id="monto" required><br><br>
+      <label for="frecuenciaDePago"><i class="fas fa-clock"></i> Frecuencia de Pago:</label>
+      <input type="text" name="frecuenciaDePago" id="frecuenciaDePago" required><br><br>
+      <label for="usuariocc"><i class="fas fa-id-card"></i> CC Usuario:</label>
+      <input type="number" name="usuariocc" id="usuariocc" required><br><br>
+      <input type="submit" value="Agregar">
+    </form>
+  </div>
+
+  <!-- Botones de Ir a Inicio y Listar Contratos -->
+  <div class="button-container">
+    <a href="/" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/contratos/listar" class="list-button"><i class="fas fa-file-alt"></i> Listar Contratos</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Contratos</title>
+  <link rel="stylesheet" href="/css/listarContratos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+      <a href="/usuarios/listar" class="menu-item"><i class="fas fa-users"></i> Listar usuarios</a>
+      <a href="/contratos/agregar" class="menu-item"><i class="fas fa-plus"></i> Agregar contrato</a>
+      <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Listado de Contratos -->
+  <div class="container">
+    <h1>Listado de Contratos</h1>
+    <% if (contratos.length === 0) { %>
+      <p>No se encontraron contratos.</p>
+    <% } else { %>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Fecha de Firma</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Fin</th>
+          <th>Empresa</th>
+          <th>Empleado</th>
+          <th>Funciones</th>
+          <th>Monto</th>
+          <th>Frecuencia de Pago</th>
+          <th>CC Usuario</th>
+          <th>Acciones</th>
+        </tr>
+        <% contratos.forEach((contrato) => { %>
+          <tr>
+            <td><%= contrato.id %></td>
+            <td><%= contrato.fechaFirma %></td>
+            <td><%= contrato.fechaInicio %></td>
+            <td><%= contrato.fechaFin %></td>
+            <td><%= contrato.empresa %></td>
+            <td><%= contrato.empleado %></td>
+            <td><%= contrato.funciones %></td>
+            <td><%= contrato.monto %></td>
+            <td><%= contrato.frecuenciaDePago %></td>
+            <td><%= contrato.usuariocc %></td>
+            <td class="acciones">
+              <a href="/contratos/editar/<%= contrato.id %>"><i class="fas fa-edit"></i></a>
+              <a href="/contratos/eliminar/<%= contrato.id %>"><i class="fas fa-trash-alt"></i></a>
+            </td>
+          </tr>
+        <% }); %>
+      </table>
+    <% } %>
+
+    <!-- Botones -->
+    <div class="botones">
+      <a href="/" class="boton"><i class="fas fa-home"></i> Ir a Inicio</a>
+      <a href="/contratos/agregar" class="boton"><i class="fas fa-plus"></i> Agregar Contrato</a>
+    </div>
+  </div>
+</body>
+</html>

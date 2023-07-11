@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrar Usuario</title>
+  <link rel="stylesheet" href="/css/registrar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/" class="menu-item"><i class="fas fa-home"></i> Inicio</a>
+      <a href="/usuarios/login" class="menu-item"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Formulario de registro -->
+  <div class="form-container">
+    <h1 class="form-title">Registrar</h1>
+    <form action="/usuarios/registrar-user" method="POST">
+      <label for="cc"><i class="fas fa-id-card"></i> Cédula:</label>
+      <input type="number" name="cc" required><br>
+    
+      <label for="pass"><i class="fas fa-lock"></i> Contraseña:</label>
+      <input type="password" name="pass" required><br>
+    
+      <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
+      <input type="text" name="nombre" required><br>
+    
+      <label for="apellido"><i class="fas fa-user"></i> Apellido:</label>
+      <input type="text" name="apellido" required><br>
+    
+      <label for="genero"><i class="fas fa-venus-mars"></i> Género:</label>
+      <input type="text" name="genero" required><br>
+    
+      <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+      <input type="email" name="email" required><br>
+    
+      <button type="submit"><i class="fas fa-user-plus"></i> Registrar</button>
+    </form>
+    
+    <div class="login-link">
+      ¿Ya tienes una cuenta? <a href="/usuarios/login">Inicia sesión</a>
+    </div>
+  </div>
+</body>
+</html>

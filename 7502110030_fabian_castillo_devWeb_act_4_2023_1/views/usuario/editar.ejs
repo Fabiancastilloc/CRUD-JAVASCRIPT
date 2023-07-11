@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar usuario</title>
+  <link rel="stylesheet" href="/css/editarU.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <a href="/" class="logo">CRUD CONTRATOS</a>
+    <nav class="menu">
+      <a href="/contratos/listar" class="menu-item"><i class="fas fa-file-alt"></i> Listar contratos</a>
+      <a href="/usuarios/listar" class="menu-item"><i class="fas fa-users"></i> Listar usuarios</a>
+      <a href="/usuarios/logout" class="menu-item"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <!-- Formulario de Edición -->
+  <div class="edit-form">
+    <h1 class="edit-form-title">Editar usuario</h1>
+    <form action="/usuarios/editar-user/<%= usuario.cc %>" method="POST">
+      <label for="cc">CC:</label>
+      <input type="text" id="cc" name="cc" value="<%= usuario.cc %>" required><br>
+      <label for="pass">Contraseña:</label>
+      <input type="password" id="pass" name="pass" value="<%= usuario.pass %>" required><br>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" value="<%= usuario.nombre %>" required><br>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" value="<%= usuario.apellido %>" required><br>
+      <label for="genero">Género:</label>
+      <input type="text" id="genero" name="genero" value="<%= usuario.genero %>" required><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<%= usuario.email %>" required><br>
+      <button type="submit">Guardar cambios</button>
+    </form>
+  </div>
+
+  <!-- Botones de Ir a Inicio y Listar -->
+  <div class="button-container">
+    <a href="/" class="home-button"><i class="fas fa-home"></i> Ir a Inicio</a>
+    <a href="/usuarios/listar" class="list-button"><i class="fas fa-list"></i> Listar Usuarios</a>
+  </div>
+
+</body>
+</html>
